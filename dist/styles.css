@@ -1,0 +1,77 @@
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+header, footer {
+  background-color: #4f4cd7;
+}
+
+.body,
+.top-container {
+    background-color:#ffffffd5
+}
+
+.navbar {
+    background-color: rgb(65, 62, 62);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #b9a0add5;
+}
+
+h1, h2, h3, h4, .username, nav {
+  color: #000000;
+  font-family: "Prata", serif;
+}
+
+
+
+.btn-danger {
+    background-color: #ac87a2;
+    border-color: black;
+}
+
+.btn-outline-success {
+  background-color: #ac87a2;
+  border-color: #7b264d;
+}
+
+.btn {
+    color: #ffff;
+}
+
+.btn-outline-success:hover, .btn-outline-success:disabled, .btn-outline-success:active, .btn-outline-success:focus {
+  background-color: rgba(97, 11, 34, 0.231);
+  border-color: rgba(65, 24, 46, 0.596);
+}
+
+.container-1 {
+    margin-top: 90px;
+}
+
+.img-fluid {
+    margin: 70px 50px 0 40px;
+    border-radius: 10%;
+}
+
+
+
+/*Login container*/
+.login-container {
+    margin-top: 80px;
+    margin-left: 30%;
+}
+
+.panel-title {
+   margin-left: 40%;
+}
+
+.btn-primary {
+    background-color:#ac87a2 ;
+    border-color: #000000;
+}
+
+.btn-primary:hover {
+    background-color: rgba(247, 193, 207, 0.539);
+    color: #000000;
+    border-color:rgba(247, 193, 207, 0.539) ;
+}
+

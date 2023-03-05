@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Min sosiale medieplattform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+  <body class="body">
+
+    <!--Nav-->
+    <nav class="navbar navbar-expand-md ">
+        <div class="container">
+            <a href="#" class="navbar-brand">Min sosiale medieplattform</a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
+    
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>   
+       </nav>
+
+ <!--Top container-->
+ <section class="top-container text-dark p-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex">
+            <div>
+                <h1 class="h1 container-1">My social media application</h1>
+                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, autem.</p>
+                <a href="login.html"><button class="btn btn-danger btn-lg">Log In</button></a>
+                <a href="signup.html"><button class="btn btn-danger btn-lg">Sign Up</button></a>
+            </div>
+          <img class="img-fluid w-50 d-none d-sm-block" src="img/img1.jpg" alt="">
+          
+        </div>
+    </div>
+   </section>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-3">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Søk" aria-label="Søk">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Søk</button>
+          </form>
+          <hr>
+          <h4>Filtre</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Filtrelement 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+              Filtrelement 2
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Opprett en ny post</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Publiser</button>
+          </form>
+          <hr>
+          <h4>Poster</h4>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tittel på post</h5>
+              <p class="card-text">Tekst i post</p>
+              <a href="#" class="card-link">Oppdater</a>
+              <a href="#" class="card-link">Slett</a>
+            </div>
+        <script src="script.js"></script>
+        </body>
+</html>
