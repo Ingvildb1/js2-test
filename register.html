@@ -29,36 +29,28 @@
             </div>
         </div>   
        </nav>
-
-
-<!-- Log in container-->
-  <div class="container login-container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Log In</h3>
+       <div class="container">
+        <h2>Registrer konto</h2>
+        <form id="register-form" method="post">
+          <div class="form-group">
+            <label for="username">Brukernavn:</label>
+            <input type="text" class="form-control" id="usernameInput" name="username" required>
           </div>
-          <div class="panel-body">
-            <form role="form">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Skriv inn brukernavn">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Skriv inn passord">
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Log In</button>
-            </form>
+          <div class="form-group">
+            <label for="email">E-postadresse:</label>
+            <input type="email" class="form-control" id="emailInput" name="email" required>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="password">Passord:</label>
+            <input type="password" class="form-control" id="passwordInput" name="password" minlength="8" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="registerButton">Registrer</button>
+        </form>
       </div>
-    </div>
-  </div>
-  <!-- inkluderer Bootstrap JavaScript -->
+      
+ <!-- inkluderer Bootstrap JavaScript -->
 
-  <script src="login.js"></script>
-  <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-</body>
+ <script src="register.js"></script>
+ <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
 </html>

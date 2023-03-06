@@ -1,16 +1,7 @@
 const API_BASE_URL = 'https://nf-api.onrender.com';
 
 //Registers urser 
-
-/**
- * API call that registers the user
- * @param {string} url
- * @param {any} data
- * ```js
- * 
- * ```
- */
-
+window.onload = function() {
 
 async function registerUser(url, data) {
   try {
@@ -94,3 +85,32 @@ async function fetchWithToken(url) {
   }
   
   fetchWithToken(API_BASE_URL + '/api/v1/social/posts');
+
+  //
+
+  // Registrer bruker og send til login-siden
+const registerForm = document.querySelector('#register-form');
+registerForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const username = registerForm.elements.username.value;
+  const email = registerForm.elements.email.value;
+  const password = registerForm.elements.password.value;
+  
+  const userToRegister = {
+    name: username,
+    email: email,
+    password: password,
+  };
+
+  const registerUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
+
+  const response = await registerUser(registerUrl, userToRegister);
+
+  if (response && response.success) {
+    window.location.href = 'login.html';
+  } else {
+    // Håndter feilregistrering
+    console.log('Kunne ikke registrere bruker');
+  }
+});
+}

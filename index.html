@@ -24,6 +24,9 @@
                         <a href="login.html" class="nav-link">Log In</a>
                     </li>
                     <li class="nav-item">
+                      <a href="register.html" class="nav-link">Register</a>
+                  </li>
+                    <li class="nav-item">
                         <a href="profile.html" class="nav-link">Profile</a>
                     </li>
                 </ul>
@@ -39,7 +42,7 @@
                 <h1 class="h1 container-1">My social media application</h1>
                 <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, autem.</p>
                 <a href="login.html"><button class="btn btn-danger btn-lg">Log In</button></a>
-                <a href="signup.html"><button class="btn btn-danger btn-lg">Sign Up</button></a>
+                <a href="register.html"><button class="btn btn-danger btn-lg">Sign Up</button></a>
             </div>
           <img class="img-fluid w-50 d-none d-sm-block" src="img/img1.jpg" alt="">
           
@@ -59,33 +62,91 @@
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
             <label class="form-check-label" for="defaultCheck1">
-              Filtrelement 1
+              Fashion
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
             <label class="form-check-label" for="defaultCheck2">
-              Filtrelement 2
+              Interior
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+            <label class="form-check-label" for="defaultCheck3">
+              Animals
             </label>
           </div>
         </div>
         <div class="col-lg-9">
-          <form>
+          <form id="postForm">
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Opprett en ny post</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <label for="postTitle">Tittel</label>
+              <input type="text" class="form-control" id="postTitle" placeholder="Skriv inn tittel">
+            </div>
+            <div class="form-group">
+              <label for="postSubtitle">Undertittel</label>
+              <input type="text" class="form-control" id="postSubtitle" placeholder="Skriv inn undertittel">
+            </div>
+            <div class="form-group">
+              <label for="postContent">Innhold</label>
+              <textarea class="form-control" id="postContent" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Publiser</button>
+            <div id="postsContainer"></div>
+
           </form>
-          <hr>
+                    
+        
           <h4>Poster</h4>
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tittel på post</h5>
-              <p class="card-text">Tekst i post</p>
-              <a href="#" class="card-link">Oppdater</a>
-              <a href="#" class="card-link">Slett</a>
+              <h5 class="card-title">Fashion Post 1</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Fashion</h6>
+              <img src="https://via.placeholder.com/150" class="float-right">
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis suscipit consequatur numquam assumenda quasi, inventore labore illo perferendis possimus, repudiandae ad dicta totam molestiae sunt quaerat aperiam laborum itaque.</p>
+              <a href="#" class="card-link">Update</a>
+              <a href="#" class="card-link">Delete</a>
             </div>
-        <script src="script.js"></script>
+          </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Interior Post 2</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Interior</h6>
+                <img src="https://via.placeholder.com/150" class="float-right">
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis earum optio culpa, voluptate delectus perferendis quo. Cumque similique fugit unde, dolores recusandae totam minus, dolore eius quo magni, temporibus odit.</p>
+                <a href="#" class="card-link">Update</a>
+                <a href="#" class="card-link">Delete</a>
+              </div>
+            </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Animals Post 3</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Animals</h6>
+                  <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius hic ex mollitia quasi? Vitae, ratione. Corporis, vitae velit, voluptas harum mollitia a maiores omnis magni labore odio modi? Voluptas, illum.</p>
+                  <a href="#" class="card-link">Update</a>
+                  <a href="#" class="card-link">Delete</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Animals Post 4</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Animals</h6>
+                  <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius hic ex mollitia quasi? Vitae, ratione. Corporis, vitae velit, voluptas harum mollitia a maiores omnis magni labore odio modi? Voluptas, illum.</p>
+                  <a href="#" class="card-link">Update</a>
+                  <a href="#" class="card-link">Delete</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Interior Post 5</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Interior</h6>
+                  <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius hic ex mollitia quasi? Vitae, ratione. Corporis, vitae velit, voluptas harum mollitia a maiores omnis magni labore odio modi? Voluptas, illum.</p>
+                  <a href="#" class="card-link">Update</a>
+                  <a href="#" class="card-link">Delete</a>
+                </div>
+              </div>
+       
+        <script src="home.js"></script>
         </body>
 </html>
