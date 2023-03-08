@@ -92,3 +92,77 @@ const postForm = document.getElementById("postForm");
 postForm.addEventListener("submit", addPost);
 
 
+//----------- Oppdatere og slette poster
+
+
+  const posts = [
+    {
+      title: "Fashion Post 1",
+      category: "Fashion",
+      image: "https://via.placeholder.com/150",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis suscipit consequatur numquam assumenda quasi, inventore labore illo perferendis possimus, repudiandae ad dicta totam molestiae sunt quaerat aperiam laborum itaque."
+    },
+    {
+      title: "Food Post 1",
+      category: "Food",
+      image: "https://via.placeholder.com/150",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis suscipit consequatur numquam assumenda quasi, inventore labore illo perferendis possimus, repudiandae ad dicta totam molestiae sunt quaerat aperiam laborum itaque."
+    }
+  ];
+
+  function renderPosts() {
+    const postContainer = document.getElementById("post-container");
+    postContainer.innerHTML = "";
+
+    posts.forEach((post, index) => {
+      const postCard = document.createElement("div");
+      postCard.className = "card";
+      postCard.innerHTML = `
+        <div class="card-body">
+          <h5 class="card-title">${post.title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${post.category}</h6>
+          <img src="${post.image}" class="float-right">
+          <p class="card-text">${post.content}</p>
+          <a href="#" class="card-link" onclick="editPost(${index})">Edit</a>
+          <a href="#" class="card-link" onclick="deletePost(${index})">Delete</a>
+        </div>
+      `;
+
+      postContainer.appendChild(postCard);
+    });
+  }
+
+  function addPost() {
+    const title = document.getElementById("title").value;
+    const category = document.getElementById("category").value;
+    const image = document.getElementById("image").value;
+    const content = document.getElementById("content").value;
+
+    const newPost = { title, category, image, content };
+    posts.push(newPost);
+    renderPosts();
+  }
+
+  function editPost(index) {
+    const post = posts[index];
+    const title = prompt("Enter new title", post.title);
+    const category = prompt("Enter new category", post.category);
+    const image = prompt("Enter new image URL", post.image);
+    const content = prompt("Enter new content", post.content);
+
+    const updatedPost = { title, category, image, content };
+    posts[index] = updatedPost;
+    renderPosts();
+  }
+
+  function deletePost(index) {
+    const confirmed = confirm("Are you sure you want to delete this post?");
+    if (confirmed) {
+      posts.splice(index, 1);
+      renderPosts();
+    }
+  }
+
+  renderPosts();
+
+

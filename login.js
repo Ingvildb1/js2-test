@@ -16,10 +16,9 @@ async function handleLogin(event) {
 
   if (userLoggedIn) {
     console.log('User is logged in');
-    // ... gjør noe annet
   } else {
     console.log('User login failed');
-    // ... gi en feilmelding til brukeren eller gjør noe annet
+    // gi en feilmelding til brukeren
   }
 }
 

@@ -25,7 +25,7 @@ async function registerUser(url, data) {
 
 
 const registerButton = document.getElementById('registerButton');
-window.onload = function() {
+
 registerButton.addEventListener('click', async () => {
   const usernameInput = document.getElementById('usernameInput');
   const emailInput = document.getElementById('emailInput');
@@ -42,4 +42,3 @@ registerButton.addEventListener('click', async () => {
   // Redirect to login page after registration
   window.location.href = 'login.html';
 });
-}
