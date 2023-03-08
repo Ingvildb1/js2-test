@@ -5,42 +5,56 @@ header, footer {
 
 .body,
 .top-container {
-    background-color:#ffffffd5
+    background-color:#0d0d0db7;
 }
 
 .navbar {
-    background-color: rgb(65, 62, 62);
+    background-color: #0D0D0D;
+}
+
+p {
+    color: #d7d7d7;
 }
 
 .navbar-brand,
 .nav-link {
-    color: #b9a0add5;
+    color: #ffffff;
 }
 
-h1, h2, h3, h4, .username, nav {
-  color: #000000;
+h1, h2, h3, .username {
+  color: rgb(255, 255, 255);
   font-family: "Prata", serif;
+}
+
+h4 {
+    color:#ffffff;
+    font-family: serif;
+}
+
+span {
+    color: #ad1b81;
 }
 
 
 
 .btn-danger {
-    background-color: #ac87a2;
+    background-color: #151515;
     border-color: black;
 }
 
 .btn-outline-success {
-  background-color: #ac87a2;
-  border-color: #7b264d;
+  background-color: #000000;
+  border-color: #8e1e52;
 }
 
 .btn {
     color: #ffff;
+    margin-bottom: 25px;
 }
 
 .btn-outline-success:hover, .btn-outline-success:disabled, .btn-outline-success:active, .btn-outline-success:focus {
-  background-color: rgba(97, 11, 34, 0.231);
-  border-color: rgba(65, 24, 46, 0.596);
+  background-color: #d5762c85;
+  border-color: #8e1e52;
 }
 
 .container-1 {
@@ -51,6 +65,35 @@ h1, h2, h3, h4, .username, nav {
     margin: 70px 50px 0 40px;
     border-radius: 10%;
 }
+
+#postForm input {
+    background-color: #aeaeae;
+}
+
+/* Filter*/
+.form-check label {
+    color: #ffff;
+}
+
+/*posts feed*/
+.card-body {
+    background-color:#9036128c ;
+    padding-bottom: 50px;
+}
+
+.card-link {
+    color: #000000;
+}
+
+.card {
+    margin-top: 40px;
+}
+
+.card img {
+    height: 350px;
+    width: 450px;
+}
+
 
 
 

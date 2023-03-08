@@ -39,17 +39,16 @@
     <div class="container">
         <div class="d-sm-flex">
             <div>
-                <h1 class="h1 container-1">My social media application</h1>
+                <h1 class="h1 container-1">You have the <span>colors!</span></h1>
                 <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, autem.</p>
-                <a href="login.html"><button class="btn btn-danger btn-lg">Log In</button></a>
-                <a href="register.html"><button class="btn btn-danger btn-lg">Sign Up</button></a>
             </div>
-         
-          
+            <img class="img-fluid w-50 d-none d-sm-block" src="img/header2.jpg" alt="">
+            
         </div>
     </div>
    </section>
 
+   <!--Filter og søk-->
     <div class="container mt-4">
       <div class="row">
         <div class="col-lg-3">
@@ -78,8 +77,11 @@
             </label>
           </div>
         </div>
+
+        <!--New post-->
         <div class="col-lg-9">
           <form id="postForm">
+            <h4> Share your colors</h4>
             <div class="form-group">
               <label for="postTitle">Tittel</label>
               <input type="text" class="form-control" id="postTitle" placeholder="Skriv inn tittel">
@@ -92,55 +94,57 @@
               <label for="postContent">Innhold</label>
               <textarea class="form-control" id="postContent" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Publiser</button>
+            <button type="submit" class="btn btn-outline-success ">Publiser</button>
             <div id="postsContainer"></div>
 
           </form>
                     
-        
+        <!--Posts feed -->
           <h4>Poster</h4>
           <div class="card" id="post-container">
             <div class="card-body">
               <h5 class="card-title">Fashion Post 1</h5>
               <h6 class="card-subtitle mb-2 text-muted">Fashion</h6>
-              <img src="https://via.placeholder.com/150" class="float-right">
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis suscipit consequatur numquam assumenda quasi, inventore labore illo perferendis possimus, repudiandae ad dicta totam molestiae sunt quaerat aperiam laborum itaque.</p>
               <a href="#" class="card-link">Update</a>
               <a href="#" class="card-link">Delete</a>
             </div>
           </div>
-            <div class="card">
+            <div class="card" id="post-container">
               <div class="card-body">
                 <h5 class="card-title">Interior Post 2</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Interior</h6>
-                <img src="https://via.placeholder.com/150" class="float-right">
+                <img src="img/img7.jpg" class="float-right card-img-top">
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis earum optio culpa, voluptate delectus perferendis quo. Cumque similique fugit unde, dolores recusandae totam minus, dolore eius quo magni, temporibus odit.</p>
                 <a href="#" class="card-link update-link">Update</a>
                 <a href="#" class="card-link delete-link">Delete</a>
               </div>
             </div>
-              <div class="card">
+              <div class="card" id="post-container">
                 <div class="card-body">
-                  <h5 class="card-title">Animals Post 3</h5>
+                  <h5 class="card-title">Fashion Post 3</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Animals</h6>
+                  <img src="img/img6.jpg" class="float-right card-img-top ">
                   <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius hic ex mollitia quasi? Vitae, ratione. Corporis, vitae velit, voluptas harum mollitia a maiores omnis magni labore odio modi? Voluptas, illum.</p>
                   <a href="#" class="card-link">Update</a>
                   <a href="#" class="card-link">Delete</a>
                 </div>
               </div>
-              <div class="card">
+              <div class="card" id="post-container">
                 <div class="card-body">
                   <h5 class="card-title">Animals Post 4</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Animals</h6>
+                  <img src="img/img5.jpg" class="float-right card-img-top ">
                   <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius hic ex mollitia quasi? Vitae, ratione. Corporis, vitae velit, voluptas harum mollitia a maiores omnis magni labore odio modi? Voluptas, illum.</p>
                   <a href="#" class="card-link">Update</a>
                   <a href="#" class="card-link">Delete</a>
                 </div>
               </div>
-              <div class="card">
+              <div class="card" id="post-container">
                 <div class="card-body">
-                  <h5 class="card-title">Interior Post 5</h5>
+                  <h5 class="card-title">Animal Post 5</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Interior</h6>
+                  <img src="img/img8.jpg" class="float-right card-img-top ">
                   <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius hic ex mollitia quasi? Vitae, ratione. Corporis, vitae velit, voluptas harum mollitia a maiores omnis magni labore odio modi? Voluptas, illum.</p>
                   <a href="#" class="card-link">Update</a>
                   <a href="#" class="card-link">Delete</a>
