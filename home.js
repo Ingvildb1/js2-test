@@ -65,104 +65,70 @@ input.addEventListener('keyup', function(event) {
 
 
 
-//------ Lag en ny post
 
 
-function addPost(event) {
-  event.preventDefault();
-  const title = document.getElementById("postTitle").value;
-  const subtitle = document.getElementById("postSubtitle").value;
-  const content = document.getElementById("postContent").value;
-  const postDiv = document.createElement("div");
-  postDiv.classList.add("card");
-  postDiv.innerHTML = `
-    <div class="card-body">
-      <h5 class="card-title">${title}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${subtitle}</h6>
-      <p class="card-text">${content}</p>
-      <a href="#" class="card-link">Update</a>
-      <a href="#" class="card-link">Delete</a>
-    </div>
-  `;
-  const postsContainer = document.getElementById("postsContainer");
-  postsContainer.appendChild(postDiv);
-}
 
-const postForm = document.getElementById("postForm");
-postForm.addEventListener("submit", addPost);
+  //----------- get posts 
+  const apiUrl = 'https://nf-api.onrender.com/api/v1/social/posts';
 
 
-//----------- Oppdatere og slette poster
+
+  const postContainer = document.getElementById('post-container');
+ 
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(posts => {
+      // Loop through the posts and create a card element for each post
+      posts.forEach(post => {
+        const author = post.author;
+        const comments = post.comments;
+        const reactions = post.reactions;
+
+        // Create the post card
+        const postCard = document.createElement('div');
+        postCard.classList.add('card');
+
+        // Add the post title
+        const postTitle = document.createElement('h5');
+        postTitle.classList.add('card-header');
+        postTitle.innerText = post.title;
+        postCard.appendChild(postTitle);
+
+        // Add the post body
+        const postBody = document.createElement('div');
+        postBody.classList.add('card-body');
+        postBody.innerText = post.body;
+        postCard.appendChild(postBody);
+
+        // Add the post author
+        const postAuthor = document.createElement('div');
+        postAuthor.classList.add('card-footer');
+        postAuthor.innerText = 'Author: ' + author.name;
+        postCard.appendChild(postAuthor);
+
+        // Add the post comments
+        const postComments = document.createElement('div');
+        postComments.classList.add('card-footer');
+        postComments.innerText = 'Comments: ' + comments.length;
+        postCard.appendChild(postComments);
+
+        // Add the post reactions
+        const postReactions = document.createElement('div');
+        postReactions.classList.add('card-footer');
+        postReactions.innerText = 'Reactions: ' + reactions.length;
+        postCard.appendChild(postReactions);
+
+        // Add the post card to the container
+        postContainer.appendChild(postCard);
+      });
+    })
+    .catch(error => console.error(error));
+
+  
+  
+  
 
 
-  const posts = [
-    {
-      title: "Fashion Post 1",
-      category: "Fashion",
-      image: "https://via.placeholder.com/150",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis suscipit consequatur numquam assumenda quasi, inventore labore illo perferendis possimus, repudiandae ad dicta totam molestiae sunt quaerat aperiam laborum itaque."
-    },
-    {
-      title: "Food Post 1",
-      category: "Food",
-      image: "https://via.placeholder.com/150",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis suscipit consequatur numquam assumenda quasi, inventore labore illo perferendis possimus, repudiandae ad dicta totam molestiae sunt quaerat aperiam laborum itaque."
-    }
-  ];
-
-  function renderPosts() {
-    const postContainer = document.getElementById("post-container");
-    postContainer.innerHTML = "";
-
-    posts.forEach((post, index) => {
-      const postCard = document.createElement("div");
-      postCard.className = "card";
-      postCard.innerHTML = `
-        <div class="card-body">
-          <h5 class="card-title">${post.title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${post.category}</h6>
-          <img src="${post.image}" class="float-right">
-          <p class="card-text">${post.content}</p>
-          <a href="#" class="card-link" onclick="editPost(${index})">Edit</a>
-          <a href="#" class="card-link" onclick="deletePost(${index})">Delete</a>
-        </div>
-      `;
-
-      postContainer.appendChild(postCard);
-    });
-  }
-
-  function addPost() {
-    const title = document.getElementById("title").value;
-    const category = document.getElementById("category").value;
-    const image = document.getElementById("image").value;
-    const content = document.getElementById("content").value;
-
-    const newPost = { title, category, image, content };
-    posts.push(newPost);
-    renderPosts();
-  }
-
-  function editPost(index) {
-    const post = posts[index];
-    const title = prompt("Enter new title", post.title);
-    const category = prompt("Enter new category", post.category);
-    const image = prompt("Enter new image URL", post.image);
-    const content = prompt("Enter new content", post.content);
-
-    const updatedPost = { title, category, image, content };
-    posts[index] = updatedPost;
-    renderPosts();
-  }
-
-  function deletePost(index) {
-    const confirmed = confirm("Are you sure you want to delete this post?");
-    if (confirmed) {
-      posts.splice(index, 1);
-      renderPosts();
-    }
-  }
-
-  renderPosts();
-
+  
 

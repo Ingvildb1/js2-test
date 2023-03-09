@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Min sosiale medieplattform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+  <body class="body">
+
+    <!--Nav-->
+    <nav class="navbar navbar-expand-md ">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Min sosiale medieplattform</a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
+    
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>   
+       </nav>
+
+       <h4>Poster</h4>
+
+       <div id="post-container"></div>
+       
+       <script>
+const API_BASE_URL_POST = 'https://nf-api.onrender.com';
+
+         const postContainer = document.getElementById('post-container');
+         const apiUrl = `${API_BASE_URL_POST}/api/v1/social/posts`;
+        
+       
+         fetch(apiUrl)
+         
+           .then(response => response.json())
+           .then(posts => {
+             // Loop through the posts and create a card element for each post
+             posts.forEach(post => {
+               const author = post.author;
+               const comments = post.comments;
+               const reactions = post.reactions;
+       
+               // Create the post card
+               const postCard = document.createElement('div');
+               postCard.classList.add('card');
+       
+               // Add the post title
+               const postTitle = document.createElement('h5');
+               postTitle.classList.add('card-header');
+               postTitle.innerText = post.title;
+               postCard.appendChild(postTitle);
+       
+               // Add the post body
+               const postBody = document.createElement('div');
+               postBody.classList.add('card-body');
+               postBody.innerText = post.body;
+               postCard.appendChild(postBody);
+       
+               // Add the post author
+               const postAuthor = document.createElement('div');
+               postAuthor.classList.add('card-footer');
+               postAuthor.innerText = 'Author: ' + author.name;
+               postCard.appendChild(postAuthor);
+       
+               // Add the post comments
+               const postComments = document.createElement('div');
+               postComments.classList.add('card-footer');
+               postComments.innerText = 'Comments: ' + comments.length;
+               postCard.appendChild(postComments);
+       
+               // Add the post reactions
+               const postReactions = document.createElement('div');
+               postReactions.classList.add('card-footer');
+               postReactions.innerText = 'Reactions: ' + reactions.length;
+               postCard.appendChild(postReactions);
+       
+               // Add the post card to the container
+               postContainer.appendChild(postCard);
+             });
+           })
+           .catch(error => console.error(error));
+       </script>
+       
+
+  <!-- inkluderer Bootstrap JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

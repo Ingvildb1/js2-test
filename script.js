@@ -14,20 +14,20 @@ async function registerUser(url, data) {
     };
 
     const response = await fetch(url, postData);
-    console.log(response);
+   // console.log(response);
     const json = await response.json();
     console.log(json);
     return json;
   } catch (error) {
-    console.log(error);
+   // console.log(error);
   }
 }
 
-const userToRegister = {
-  name: 'test_user1',
-  email: 'test_pink@noroff.no',
-  password: 'pinkgirl123',
-};
+//const userToRegister = {
+  //name: 'test_user1',
+  //email: 'test_pink@noroff.no',
+  //password: 'pinkgirl123',
+//};
 
 const registerUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
 
@@ -35,10 +35,10 @@ const registerUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
 
 //Login User
 
-const userLogin = {
-    email: 'test_pink@noroff.no',
-    password: 'pinkgirl123',
-  };
+//const userLogin = {
+  //  email: 'test_pink@noroff.no',
+    //password: 'pinkgirl123',
+  //};
 
 async function loginUser(url, data) {
     try {
@@ -50,18 +50,18 @@ async function loginUser(url, data) {
         body: JSON.stringify(data),
       };
       const response = await fetch(url, postData);
-      console.log(response);
+     // console.log(response);
       const json = await response.json();
       const accessToken = json.accessToken;
       localStorage.setItem('accessToken', accessToken);
-      console.log(json);
+      //console.log(json);
       return json;
     } catch (error) {
-      console.log(error);
+     // console.log(error);
     }
   }
   
-  loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, userToRegister);
+  loginUser(`${API_BASE_URL}/api/v1/social/auth/login`); //userToRegister);
 
 //---Making requests with JWT token
 
@@ -76,11 +76,11 @@ async function fetchWithToken(url) {
         },
       };
       const response = await fetch(url, getData);
-      console.log(response);
+     // console.log(response);
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
   
